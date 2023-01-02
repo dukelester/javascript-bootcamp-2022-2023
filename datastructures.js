@@ -25,3 +25,20 @@ const keys = marksMap.keys();
 console.log('keys', keys, [...keys]);
 marksMap.clear();
 console.log(marksMap);
+
+// Iterating over a map
+// Maps are always ordered the way the elements are added
+const grades = [
+    ['john', 90], ['mark', 89], ['ken', 12], ['mary', 90],
+];
+const gradesMap = new Map(grades);
+const gradesMapLength = gradesMap.size;
+console.log(gradesMapLength);
+
+for(let [key, value] of gradesMap) {
+    console.log(key , '=> ', value);
+}
+
+gradesMap.forEach((value, key) => {
+    console.log(key, '::=> ', value);
+})
