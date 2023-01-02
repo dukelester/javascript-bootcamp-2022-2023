@@ -41,4 +41,16 @@ for(let [key, value] of gradesMap) {
 
 gradesMap.forEach((value, key) => {
     console.log(key, '::=> ', value);
-})
+});
+
+// The SET ==> collection of unique values
+const emptySet = new Set();
+console.log(emptySet);
+const setOfGrades = new Set(grades);
+console.log(setOfGrades);
+const nameSet = new Set('duke lester dlester dlester duke lester');
+console.log(nameSet); // Set from a string => strings are iterables
+const evenNumbers = new Set([90, 30, 24, 6, 4]);
+console.log(evenNumbers);
+evenNumbers.add(90).add(80).add(60).add(4);
+console.log(evenNumbers);
