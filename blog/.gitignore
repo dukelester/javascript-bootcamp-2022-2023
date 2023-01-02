@@ -1,0 +1,9 @@
+# environment variables
+.env
+.env.production
+# local, testing, production, staging
+.env*
+
+# node modules and node configs
+node_modules/
+creds

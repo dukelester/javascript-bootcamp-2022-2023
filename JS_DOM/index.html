@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+      (function(_,e,rr,s){_errs=[s];var c=_.onerror;_.onerror=function(){var a=arguments;_errs.push(a);
+      c&&c.apply(this,a)};var b=function(){var c=e.createElement(rr),b=e.getElementsByTagName(rr)[0];
+      c.src="//beacon.errorception.com/"+s+".js";c.async=!0;b.parentNode.insertBefore(c,b)};
+      _.addEventListener?_.addEventListener("load",b,!1):_.attachEvent("onload",b)})
+      (window,document,"script","63a5bb854b58d103de641a93");
+  </script>
+
+</head>
+<script type="text/javascript">
+  window.Muscula = {
+          logId: 'bDh8FaAhtnR',
+          errors: [],
+      };
+      window.Muscula.onerrorOriginalHandler = window.onerror;
+      window.onerror = function () {
+          window.Muscula.errors.push(arguments);
+          return false;
+      };
+
+      (function () {
+          var m = document.createElement('script');
+          m.async = true;
+          m.src = 'https://cdn.muscula.com/m2v2.js';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(m, s);
+      })();
+</script>
+
+<body onload="console.log('welcome to the DOM')">
+    <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam officiis
+        consequatur reiciendis rem cupiditate tenetur quisquam assumenda fuga.
+        Tempore et alias fugiat labore a mollitia officia, laborum repellendus modi eum.
+    </p>
+    <div class="container" id="myContainer">
+        <textarea class="story"></textarea>
+        <button id="set-text" type="button">Set text content</button>
+        <button id="clear-text" type="button">Clear text content</button>
+      </div>
+      <br><br>
+      <div class="container">
+        <div class="parent">parent</div>
+        <button id="add-child" type="button">Add a child</button>
+        <button id="remove-child" type="button">Remove child</button>
+      </div>
+      <div class="container">
+        <form>
+          <input type="text" name="text" id="">
+          <input type="date" name="date" id="">
+          <input type="email" name="email address" id="">
+        </form>
+      </div>
+    <script src="index.js"></script>
+</body>
+</html>
