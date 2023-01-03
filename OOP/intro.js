@@ -43,3 +43,18 @@ const myTriangle = new TriangleConstructor(78, 20);
 console.log(myTriangle.height, myTriangle.base, myTriangle.getArea(), myTriangle.hypotenuse());
 const myTriangle2 = new TriangleConstructor(79, 78);
 console.log(myTriangle2.height, myTriangle2.base, myTriangle2.getArea(), myTriangle2.hypotenuse());
+
+class Triangle {
+  display() {
+    console.log('My beautiful triangle');
+  };
+  area() {
+    return (this.base * this.height) / 2;
+  }
+}
+
+const tri = new Triangle();
+tri.base = 90;
+tri.height = 20;
+
+tri.area();
