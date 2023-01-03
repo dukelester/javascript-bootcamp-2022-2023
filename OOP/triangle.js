@@ -29,3 +29,5 @@ const myTri = new Triangle(34, 20, 90);
 myTri.display();
 console.log(myTri.calculateArea());
 console.log(myTri.calculatePerimeter());
+
+module.exports = Triangle;
