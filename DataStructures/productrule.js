@@ -7,9 +7,9 @@
 const productRule = (n) => {
   let count = 0;
   for (let k = 0; k < n; k += 1) {
-    count += 1;
+    count += 1; // compelxity of O(n)
     for (let m = k; m < 5 * n; m += 1) {
-      count += 1;
+      count += 1; // compelxity of O(5n)
     }
   }
   return count;
