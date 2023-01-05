@@ -15,3 +15,8 @@ const productRule = (n) => {
   return count;
 };
 console.log(productRule(10));
+/**
+ *  f(n) = 5n*n because line 7 runs 5n times for a total of n iterations.
+Therefore, this results in a total of 5n2 operations. Applying the coefficient rule, the result
+is that O(n)=n2.
+ */
