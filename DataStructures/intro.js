@@ -39,4 +39,11 @@ const cubicFunction = (n) => {
 
 cubicFunction(8);
 
-// Logarithimic algorithm
+// Logarithimic algorithm O(log n)
+const logarithmicFunction = (num) => {
+  for (let k = 2; k < num; k *= 2) {
+    console.log(k);
+  }
+};
+
+logarithmicFunction(2000000);
