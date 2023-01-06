@@ -41,10 +41,11 @@ console.log(isPrime(9), isPrime(2), isPrime(7));
 const primeNumbersLessThanN = (number) => {
   for (let k = 0; k < number; k += 1) {
     if (isPrime(k)) {
-      console.log(k);
+      console.log(k); // Time Complexity: O(nsqrt(n))
     }
   }
 };
 
 primeNumbersLessThanN(78);
 primeNumbersLessThanN(12);
+console.log(Number.EPSILON);
