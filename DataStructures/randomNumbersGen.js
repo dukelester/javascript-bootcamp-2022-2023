@@ -25,3 +25,26 @@ const modularExponentiationImproved = (base, exponent, modulus) => {
 
 console.log(modularExponentiationImproved(20, 3, 2));
 console.log(modularExponentiationImproved(2, 8, 20));
+
+// Print all primes less than n
+const isPrime = (number) => {
+  if (number <= 1) return false;
+  if (number <= 3) return true;
+  if (number % 2 === 0 || number % 3 === 0) return false;
+  for (let k = 5; k * k <= number; k += 6) {
+    if (number % k === 0 || number % (k + 2) === 0) return false;
+  }
+  return true;
+};
+
+console.log(isPrime(9), isPrime(2), isPrime(7));
+const primeNumbersLessThanN = (number) => {
+  for (let k = 0; k < number; k += 1) {
+    if (isPrime(k)) {
+      console.log(k);
+    }
+  }
+};
+
+primeNumbersLessThanN(78);
+primeNumbersLessThanN(12);
