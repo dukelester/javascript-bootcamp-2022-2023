@@ -169,3 +169,10 @@ const commonElements = (kArray) => {
 };
 
 console.log(commonElements([[1, 2, 3], [1, 2, 3, 4], [1, 2]]));
+
+const numbers = [1, 2, 17, 19, 30, 45, 67, 90, 99, 100];
+numbers.map((num) => console.log(num * 3));
+console.log(numbers.map((num) => num * 3));
+console.log(numbers.filter((num) => num % 2 === 0));
+const summation = numbers.reduce((myTotal, num) => myTotal + num, 0);
+console.log(summation);
