@@ -176,3 +176,25 @@ console.log(numbers.map((num) => num * 3));
 console.log(numbers.filter((num) => num % 2 === 0));
 const summation = numbers.reduce((myTotal, num) => myTotal + num, 0);
 console.log(summation);
+
+// Multidimensional Arrays
+
+const createMatrix = (rows, columns) => {
+  const myArray = Array.from(rows);
+  for (let col = 0; col < columns; col += 1) {
+    myArray[col] = Array.from(rows);
+  }
+  return myArray;
+};
+
+console.log(createMatrix(3, 3));
+
+console.log(
+  `%e%%%%%%%%%\n
+  %...%.%...%\n
+  %.%.%.%.%%%\n
+  %.%.......%\n
+  %.%%%%.%%.%\n
+  %.%.....%.%\n
+  %%%%%%%%%x%`,
+);
