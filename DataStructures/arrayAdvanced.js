@@ -114,3 +114,17 @@ console.log('*****game 3*********', board3);
 console.log(ticTacToeWinner(board3, 'X'));
 console.log(ticTacToeWinner(board3, 'O'));
 console.log(ticTacToeWinner(board3, '-'));
+
+// PATH FINDING given the location x, find the exit e
+const mazeBoard = `
+  %e%%%%%%%%%\n
+  %...%.%...%\n
+  %.%.%.%.%%%\n
+  %.%.......%\n
+  %.%%%%.%%.%\n
+  %.%.....%.%\n
+  %%%%%%%%%x%`;
+console.log(mazeBoard);
+const rows = mazeBoard.split('\n');
+const mazeMatrix = rows.map((arr) => arr.split(''));
+console.log(mazeMatrix);
