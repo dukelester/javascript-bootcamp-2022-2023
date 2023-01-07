@@ -124,3 +124,18 @@ const arraySlice = (array, startIndex, endIndex) => {
 console.log(arraySlice([90, 80, 70, 60, 40, 20]));
 console.log(arraySlice([90, 80, 70, 60, 40, 20], 3));
 console.log(arraySlice([90, 80, 70, 60, 40, 20], 2, 4));
+
+// FIND THE MEDIAN OF TWO SORTED ARRAYS OF THE SAME SIZE
+const medianOfArray = (array) => {
+  const { length } = array;
+  // Odd length
+  if (length % 2 === 1) {
+    return array[Math.floor(length / 2)];
+  }
+  if (length % 2 === 0) {
+    return (array[length / 2] + array[(length / 2) - 1]) / 2;
+  }
+  return 'done';
+};
+console.log(medianOfArray([20, 30, 50, 70, 80]));
+console.log(medianOfArray([1, 2, 17, 19, 30, 45, 67, 90, 99, 100]));
