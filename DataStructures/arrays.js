@@ -33,7 +33,7 @@ console.log(mark);
 There are multiple ways to iterate through an array in JavaScript. They all have a time
 complexity of O(n) since the iteration is visiting n number of elements.
  */
-for (let k of marks) {
+for (const k of marks) {
   console.log(k);
 }
 
@@ -88,3 +88,39 @@ console.log(findSum([], 0));
 console.log(findSum([90, 80, 70, 60, 40, 50], 0));
 console.log(findSum([90, 80, 70, 60, 40, 50], 90));
 console.log(findSum([90, 80, 70, 60, 40, 20], 80));
+
+const findSumImproved = (array, weight) => {
+  // using the hashtable to store visited elements
+  const hashTable = {};
+  for (let k = 0; k < array.length; k += 1) {
+    const currentElement = array[k];
+    const difference = weight - currentElement;
+    if (hashTable[currentElement] !== undefined) {
+      return [k, hashTable[difference]];
+    }
+    hashTable[difference] = k;
+  }
+  console.log(hashTable, 'hashtable');
+  return -1;
+};
+
+console.log(findSumImproved([90, 80, 70, 60, 40, 20], 80));
+console.log(findSumImproved([90, 80, 70, 60, 40, 50], 90));
+
+// IMPLEMENT THE ARRAY.SLICE(arr, start, end) FUNCTION FROM SCRATCH
+const arraySlice = (array, startIndex, endIndex) => {
+  if (!startIndex && !endIndex) return array;
+  if (!endIndex) {
+    endIndex = array.length;
+  }
+  // endIndex = array.length;
+  const slicedArray = [];
+  for (let i = startIndex; i < endIndex; i += 1) {
+    slicedArray.push(array[i]);
+  }
+  return slicedArray;
+};
+
+console.log(arraySlice([90, 80, 70, 60, 40, 20]));
+console.log(arraySlice([90, 80, 70, 60, 40, 20], 3));
+console.log(arraySlice([90, 80, 70, 60, 40, 20], 2, 4));
