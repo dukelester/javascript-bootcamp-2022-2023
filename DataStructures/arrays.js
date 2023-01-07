@@ -139,3 +139,33 @@ const medianOfArray = (array) => {
 };
 console.log(medianOfArray([20, 30, 50, 70, 80]));
 console.log(medianOfArray([1, 2, 17, 19, 30, 45, 67, 90, 99, 100]));
+
+// FIND COMMON ELEMENTS IN K-SORTED ARRAYS
+console.log('***FIND COMMON ELEMENTS IN K-SORTED ARRAYS****\n');
+const commonElements = (kArray) => {
+  const hashMap = {};
+  let last;
+  const answer = [];
+  for (let array = 0; array < kArray.length; array += 1) {
+    const currentArray = kArray[array];
+    last = null;
+    for (let i = 0; i < currentArray.length; i += 1) {
+      const currentElement = currentArray[i];
+      if (last !== currentElement) {
+        if (!hashMap[currentElement]) {
+          hashMap[currentElement] = 1;
+        }
+        hashMap[currentElement] += 1;
+      }
+      last = currentElement;
+    }
+  }
+  for (const prop in hashMap) {
+    if (hashMap[prop] === kArray.length) {
+      answer.push(parseInt(prop));
+    }
+  }
+  return answer;
+};
+
+console.log(commonElements([[1, 2, 3], [1, 2, 3, 4], [1, 2]]));
