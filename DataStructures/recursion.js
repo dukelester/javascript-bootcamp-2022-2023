@@ -40,3 +40,20 @@ const fibonacci = (number) => {
 console.log(fibonacci(4));
 console.log(fibonacci(10));
 console.log(fibonacci(16));
+
+/**
+ * Fibonacci Sequence: Tail Recursion
+A tail recursive function is a recursive function in which the recursive call is the last
+executed thing in the function
+ */
+const tailRecursionFib = (number, lastlast, last) => {
+  if (number === 0) {
+    return lastlast;
+  }
+  if (number === 1) {
+    return last;
+  }
+  return tailRecursionFib(number - 1, last, lastlast + last); // tail recursion
+};
+
+console.log(tailRecursionFib(10, 0, 2));
