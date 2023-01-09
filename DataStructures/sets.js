@@ -1,7 +1,4 @@
 // SETS
-
-const e = require("express");
-
 /**
  * a group of nordered unique (no duplicate) elements.
  * The set is a powerful data structure for performing uniqueness checks.
@@ -104,7 +101,7 @@ console.log(duplicatesCheck(arr));
 // RETURNING ALL UNIQUE VALUES FROM SEPARATE ARRAYS
 
 const uniqueElements = (array1, array2) => {
-  const newSet = new Set(array1.concat(array2));
+  const newSet = new Set(array1.concat(array2)); // Space Complexity: O(n + m)
   return Array.from(newSet);
 };
 
