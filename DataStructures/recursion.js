@@ -119,7 +119,7 @@ console.log(base10ToString(34567890));
  */
 
 const swapElements = (strArray, index1, index2) => {
-  let temp = strArray[index1];
+  const temp = strArray[index1];
   strArray[index1] = strArray[index2];
   strArray[index2] = temp;
 };
@@ -141,3 +141,26 @@ const permuteArray = (stringArray) => {
 
 permuteArray(['A', 'C', 'D']);
 permuteArray('duke'.split(''));
+
+// WRITE A PROGRAM THAT RECURSIVELY DETERMINES IF A STRING IS A PALINDROME
+/**
+ * A palindrome is a word spelled the same backward and forward such as deified,
+ * racecar, testset, and aibohphobia (the fear of palindromes).
+ */
+
+const isPalindromeHelper = (word, beginPos, endPos) => {
+  if (beginPos >= endPos) {
+    return true;
+  }
+  if (word.at(beginPos) !== word.at(endPos)) {
+    return false;
+  }
+  return isPalindromeHelper(word, beginPos + 1, endPos - 1);
+};
+
+const isPalindromeRecursive = (word) => isPalindromeHelper(word, 0, word.length - 1);
+console.log(isPalindromeRecursive('duke'));
+console.log(isPalindromeRecursive('testset'));
+console.log(isPalindromeRecursive('racecar'));
+console.log(isPalindromeRecursive('aibohphobia'));
+console.log(isPalindromeRecursive('master'));
