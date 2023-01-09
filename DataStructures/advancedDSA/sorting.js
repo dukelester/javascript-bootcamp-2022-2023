@@ -64,7 +64,7 @@ console.log(selectionSort(nums));
  */
 
 const insertionSort = (items) => {
-  const length  = items.length;
+  const { length } = items;
   let value;
   let i;
   let j;
@@ -80,3 +80,31 @@ const insertionSort = (items) => {
 
 console.log(insertionSort(nums));
 console.log(insertionSort(marks));
+
+// Count Sort
+/**
+ *  Count sort can be done in O(k+n) because it does not compare values. It works only for
+    numbers and given a certain range. Instead of sorting by swapping elements, this count
+    works by counting occurrences of each element in the array. Once occurrences of each
+    element are counted, the new array can be created using those occurrences. This sorts
+    the data without having to swap elements
+ *
+ */
+const countSort = (items) => {
+  const hashMap = {};
+  const sorted = [];
+  for (let k = 0; k < items.length; k += 1) {
+    if (!hashMap[items[k]]) {
+      hashMap[items[k]] = 1;
+    }
+    hashMap[items[k]] += 1;
+  }
+  for (let key in hashMap) {
+    for (let i = 0; i < hashMap[key]; i += 1) {
+      sorted.push(parseInt(key));
+    }
+  }
+  return sorted;
+};
+console.log(countSort(nums));
+console.log(countSort([6, 1, 23, 2, 3, 2, 1, 2, 2, 3, 3, 1, 123, 123, 4, 2, 3]));
