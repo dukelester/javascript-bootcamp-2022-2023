@@ -108,3 +108,8 @@ const countSort = (items) => {
 };
 console.log(countSort(nums));
 console.log(countSort([6, 1, 23, 2, 3, 2, 1, 2, 2, 3, 3, 1, 123, 123, 4, 2, 3]));
+
+const items = [6, 1, 23, 2, 3, 2, 1, 2, 2, 3, 3, 1, 123, 123, 4, 2, 3];
+const compareNumbers = (a, b) => a - b;
+console.log(items.sort(compareNumbers));
+console.log(nums.sort(compareNumbers));
