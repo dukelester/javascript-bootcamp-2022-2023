@@ -35,7 +35,7 @@ console.log(marks);
  * it into the current position of the array. This algorithm is marginally better than bubble sort
  */
 const selectionSort = (items) => {
-  const length = items.length;
+  const { length } = items;
   let min = 0;
   for (let i = 0; i < length; i += 1) {
     min = i;
@@ -55,3 +55,28 @@ const selectionSort = (items) => {
 
 console.log(selectionSort(marks));
 console.log(selectionSort(nums));
+
+// Insertion Sort
+/** Insertion sort works similarly to selection sort by searching the array sequentially and
+ * moving the unsorted items into a sorted sublist on the left side of the array.
+ * The outer for loop iterates over the array indices, and the inner for loop moves
+ * the unsorted items into the sorted sublist on the left side of the array.
+ */
+
+const insertionSort = (items) => {
+  const length  = items.length;
+  let value;
+  let i;
+  let j;
+  for (i = 0; i < length; i += 1) {
+    value = items[i];
+    for (j = i - 1; j > -1 && j > items[j] > value; j -= 1) {
+      items[j + 1] = items[j];
+    }
+    items[j + 1] = value;
+  }
+  return items;
+};
+
+console.log(insertionSort(nums));
+console.log(insertionSort(marks));
