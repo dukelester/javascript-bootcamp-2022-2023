@@ -109,3 +109,35 @@ const base10ToString = (number) => {
 console.log(base10ToString(232));
 console.log(base10ToString(2));
 console.log(base10ToString(34567890));
+
+// PRINT ALL PERMUTATIONS OF AN ARRAY
+/**
+ * The premise of the problem is to swap elements of the array in every possible position
+ * Base case: beginIndex is equal to endIndex. When this occurs, the function should print
+ *  the current permutation.
+ * Permutations: We will need a function to swap elements:
+ */
+
+const swapElements = (strArray, index1, index2) => {
+  let temp = strArray[index1];
+  strArray[index1] = strArray[index2];
+  strArray[index2] = temp;
+};
+
+const permutations = (strArray, begining, end) => {
+  if (begining === end) {
+    console.log(strArray);
+  }
+  for (let k = begining; k < end + 1; k += 1) {
+    swapElements(strArray, begining, k);
+    permutations(strArray, begining + 1, end);
+    swapElements(strArray, begining, k);
+  }
+};
+
+const permuteArray = (stringArray) => {
+  permutations(stringArray, 0, stringArray.length - 1);
+};
+
+permuteArray(['A', 'C', 'D']);
+permuteArray('duke'.split(''));
