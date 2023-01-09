@@ -100,3 +100,15 @@ const arr = [90, 89, 80, 70, 78, 79, 89, 80, 90];
 const arr1 = [90, 89, 80, 70, 78, 79];
 console.log(duplicatesCheck(arr1));
 console.log(duplicatesCheck(arr));
+
+// RETURNING ALL UNIQUE VALUES FROM SEPARATE ARRAYS
+
+const uniqueElements = (array1, array2) => {
+  const newSet = new Set(array1.concat(array2));
+  return Array.from(newSet);
+};
+
+const arr4 = [90, 78, 90, 67, 56, 78, 89];
+const arr5 = [45, 23, 56, 78, 67, 90, 80, 78, 45, 13];
+console.log(uniqueElements(arr, arr1));
+console.log(uniqueElements(arr4, arr5));
