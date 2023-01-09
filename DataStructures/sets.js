@@ -82,3 +82,21 @@ const setDifference = (setE, setF) => {
 console.log(setDifference(setA, setC));
 console.log(setDifference(setA, setB));
 console.log(setDifference(setB, setC));
+
+// USING SETS TO CHECK FOR DUPLICATES IN AN ARRAY
+/**
+ * Check whether there are any duplicates in an array of integers using sets. By converting the
+array into a set, the size of the set can be compared with the length of the array to check for
+duplicates easily.
+*/
+const duplicatesCheck = (array) => {
+  if (array.length !== new Set(array).size) {
+    return true;
+  }
+  return false;
+};
+
+const arr = [90, 89, 80, 70, 78, 79, 89, 80, 90];
+const arr1 = [90, 89, 80, 70, 78, 79];
+console.log(duplicatesCheck(arr1));
+console.log(duplicatesCheck(arr));
