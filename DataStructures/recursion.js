@@ -28,7 +28,7 @@ const countDownToZero = (number) => {
   console.log(number);
   countDownToZero(number - 1);
 };
-// countDownToZero(100);
+countDownToZero(100);
 
 // The fibonacci of a number => number - 1 + number - 2
 const fibonacci = (number) => {
@@ -57,3 +57,30 @@ const tailRecursionFib = (number, lastlast, last) => {
 };
 
 console.log(tailRecursionFib(10, 0, 2));
+
+// Pascal's Triangle
+/**
+ * Pascal’s triangle is a triangle whose element value is the summation of its top two (left
+ * and right) values
+ * Base case: The base case for Pascal’s triangle is that the top element (row=1, col=1)
+is 1. Everything else is derived from this fact alone. Hence, when the column is 1, return 1,
+and when the row is 0, return 0.
+ * Divide and conquer: By the mathematical definition of Pascal’s triangle, a term of
+Pascal’s triangle is defined as the sum of its upper terms. Therefore, this can be expressed as
+the following: pascalTriangle(row - 1, col) + pascalTriangle(row - 1, col - 1).
+ */
+
+const pascalTriangle = (row, col) => {
+  if (col === 0) {
+    return 1;
+  }
+  if (row === 0) {
+    return 0;
+  }
+  return pascalTriangle(row - 1, col) + pascalTriangle(row - 1, col - 1);
+};
+
+console.log('pascals triangle');
+console.log(pascalTriangle(5, 2));
+console.log(pascalTriangle(3, 2));
+console.log(pascalTriangle(14, 8));
