@@ -84,3 +84,28 @@ console.log('pascals triangle');
 console.log(pascalTriangle(5, 2));
 console.log(pascalTriangle(3, 2));
 console.log(pascalTriangle(14, 8));
+
+// CONVERT DECIMAL (BASE 10) TO BINARY NUMBER
+/**
+ * To do this, keep dividing the number by 2 and each time calculate the modulus (remainder)
+and division.
+Base case: The base case for this problem is when the n is less than 2. When it is less
+than 2, it can be only 0 or 1.
+ */
+const base10ToString = (number) => {
+  let binaryString = '';
+  const base10ToStringHelper = (number) => {
+    if (number < 2) {
+      binaryString += number;
+    } else {
+      base10ToStringHelper(Math.floor(number / 2));
+      base10ToStringHelper(number % 2);
+    }
+  };
+  base10ToStringHelper(number);
+  return binaryString;
+};
+
+console.log(base10ToString(232));
+console.log(base10ToString(2));
+console.log(base10ToString(34567890));
