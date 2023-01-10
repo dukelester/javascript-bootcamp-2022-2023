@@ -13,3 +13,24 @@ on whether the array is sorted. In this section, you’ll learn about linear and
 searching. Linear searches are especially flexible because they can be used with both
 sorted and unsorted data. Binary searches are specifically used with sorted data.
 However, a linear search has a higher time complexity than a binary search.
+
+## Hashing Techniques
+
+The most important part of a hash table is the hash function. The hash function converts
+a specified key into an index for an array that stores all of the data. The three primary
+requirements for a good hash function are as follows:
+• Deterministic: Equal keys produce equal hash values.
+• Efficiency: It should be O(1) in time.
+•Uniform distribution: It makes the most use of the array.
+The first technique for hashing is to use prime numbers. By using the modulus
+operator with prime numbers, a uniform distribution of the index can be guaranteed
+With a perfect hashing function, there are no collisions. However, collision-free
+hashing is almost impossible in most cases. Therefore, strategies for handling collisions
+are needed for hash tables.
+
+## Probing
+
+To work around occurring collisions, the probing hashing technique finds the next
+available index in the array. The `linear probing` technique resolves conflicts by finding
+the next available index via incremental trials, while `quadratic probing` uses quadratic
+functions to generate incremental trials.
