@@ -72,3 +72,11 @@ The following code block shows how to insert into a singly linked list. If the h
 linked list is empty, the head is set to the new node. Otherwise, the old heap is saved in
 temp, and the new head becomes the newly added node. Finally, the new head’s next
 points to the temp (the old head)
+
+## Doubly Linked Lists
+
+A doubly linked list can be thought of as a bidirectional singly linked list. Each node in
+the doubly linked list has both a `next pointer` and a `prev pointer`.
+ a doubly linked list has a head pointer as well as a tail pointer. The
+head refers to the beginning of the doubly linked list, and the tail refers to the end of
+the doubly linked list.
