@@ -99,7 +99,7 @@ const countSort = (items) => {
     }
     hashMap[items[k]] += 1;
   }
-  for (let key in hashMap) {
+  for (const key in hashMap) {
     for (let i = 0; i < hashMap[key]; i += 1) {
       sorted.push(parseInt(key));
     }
@@ -113,3 +113,73 @@ const items = [6, 1, 23, 2, 3, 2, 1, 2, 2, 3, 3, 1, 123, 123, 4, 2, 3];
 const compareNumbers = (a, b) => a - b;
 console.log(items.sort(compareNumbers));
 console.log(nums.sort(compareNumbers));
+
+const squareRootNaive = (number) => {
+  if (number === 0 || number === 1) {
+    return number;
+  }
+  let index = 1;
+  let square = 1;
+  while (square < number) {
+    if (square === number) {
+      return square;
+    }
+    index += 1;
+    square = index * index;
+  }
+  return index;
+};
+console.log(squareRootNaive(9));
+console.log(squareRootNaive(99));
+console.log(squareRootNaive(89));
+console.log(squareRootNaive(81));
+
+// Time Complexity: O(n)
+// This is essentially a linear search since it has to linearly check one by one the value for the
+// square root.
+
+const squareRootBinary = (number) => {
+  if (number === 0 || number === 1) return number;
+  let start = 0;
+  let end = number;
+  let answer;
+
+  while (start <= end) {
+    const mid = parseInt((start + end) / 2); // Time Complexity: O(log2(n))
+    if (mid * mid === number) {
+      return mid;
+    }
+    if (mid * mid < number) {
+      start = mid + 1;
+      answer = mid;
+    } else {
+      end = mid - 1;
+    }
+  }
+  return answer;
+};
+
+console.log(squareRootBinary(9));
+console.log(squareRootBinary(90));
+console.log(squareRootBinary(121));
+
+// Find a Square Root of a Float
+const squareRootOfFloat = (floatNumber) => {
+  const threshold = 0.1;
+  let upper = floatNumber;
+  let lower = 0;
+  let middle;
+  while (upper - lower > threshold) {
+    middle = (upper + lower) / 2;
+    if (middle * middle > floatNumber) {
+      upper = middle;
+    } else {
+      lower = middle;
+    }
+  }
+  return middle;
+};
+
+console.log(squareRootOfFloat(78));
+console.log(squareRootOfFloat(9));
+console.log(squareRootOfFloat(90));
