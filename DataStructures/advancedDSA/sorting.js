@@ -202,3 +202,19 @@ console.log(marks);
 console.log(findTwoSum(marks, 100));
 console.log(findTwoSum(marks, 90));
 console.log(findTwoSum(marks, 159));
+
+// linear time
+const findTwoSumBetter = (array, sum) => {
+  const visited = {};
+  for (let k = 0; k < array.length; k += 1) {
+    if (visited[array[k]]) {
+      return true;
+    }
+    visited[sum - array[k]] = array[k];
+  }
+  return false;
+};
+
+console.log(findTwoSumBetter(marks, 100));
+console.log(findTwoSumBetter(marks, 90));
+console.log(findTwoSumBetter(marks, 159));
