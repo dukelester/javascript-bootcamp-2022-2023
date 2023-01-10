@@ -55,3 +55,20 @@ because of the constant time in its operations. Similar to a stack, it has limit
 because only one item can be accessed at a time. Queues should be used over arrays
 when you need to work with data in the `FIFO` form where the algorithm only needs to
 access the first added element.
+
+## Linked Lists
+
+A linked list is a data structure in which each node
+points to another node. Unlike arrays, which have a fixed size, a linked list is a dynamic
+data structure that can allocate and deallocate memory at runtime.
+Types of linked list => singly and doubly linked lists.
+A node in a singly linked list has the following properties: `data` and `next`. data
+is the value for the linked list node, and next is a pointer to another instance of
+SinglyLinkedListNode.
+
+### Insertion
+
+The following code block shows how to insert into a singly linked list. If the head of the
+linked list is empty, the head is set to the new node. Otherwise, the old heap is saved in
+temp, and the new head becomes the newly added node. Finally, the new head’s next
+points to the temp (the old head)
