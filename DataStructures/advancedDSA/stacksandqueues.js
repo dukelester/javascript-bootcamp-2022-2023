@@ -156,4 +156,20 @@ cashier.deliverOrder();
 cashier.deliverOrder();
 
 // DESIGN A PARENTHESIS VALIDATION CHECKER USING A STACK
+const isParenthesisValid = (parenthesisString) => {
+  const stack = new Stack();
+  for (let i = 0; i < parenthesisString.length; i += 1) {
+    const currentBracket = parenthesisString.at(i);
+    if (currentBracket === '(') {
+      stack.push(currentBracket);
+    } else if (currentBracket === ')') {
+      if (stack.isEmpty()) return false;
+      stack.pop();
+    }
+  }
+  return stack.isEmpty();
+};
 
+console.log(isParenthesisValid('((()'));
+console.log(isParenthesisValid('()'));
+console.log(isParenthesisValid('()()'));
