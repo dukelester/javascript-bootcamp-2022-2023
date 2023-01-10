@@ -214,3 +214,23 @@ console.log(doublyList.findStartingHead(78));
 console.log(doublyList.findStartingHead(90)); // Time Complexity: O(n)
 console.log(doublyList.findStartingTail(78));
 console.log(doublyList.findStartingTail(90)); // Time Complexity: O(n)
+
+// REVERSE A SINGLY LINKED LIST
+
+function reverseSingleLinkedList(linkedList) {
+  let node2 = linkedList.head;
+  let prev = null;
+
+  while (node2) {
+    const temp = node2.next;
+    node2.next = prev;
+    prev = node2;
+    if (!temp) {
+      break;
+    }
+    node2 = temp;
+  }
+  return node2;
+}
+
+console.log(reverseSingleLinkedList(list));
