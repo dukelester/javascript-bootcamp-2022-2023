@@ -119,3 +119,41 @@ const queueSearch = (queue, element) => {
 console.log(queueSearch(customerCare, 90));
 console.log(queueSearch(customerCare, 990));
 console.log(queueSearch(customerCare, 70));
+
+// DESIGN A CASHIER CLASS THAT TAKES IN A CUSTOMER OBJECT AND HANDLES FOOD
+// ORDERING ON A FIRST-COME, FIRST-SERVED BASIS
+
+function Customer(name, order) {
+  this.name = name;
+  this.order = order;
+}
+
+function Cashier() {
+  this.customers = new Queue();
+}
+
+Cashier.prototype.addOrder = function (customer) {
+  this.customers.enqueue(customer);
+};
+
+Cashier.prototype.deliverOrder = function () {
+  const finishedCustomer = this.customers.dequeue();
+  console.log(`${finishedCustomer.name}, your ${finishedCustomer.order} order is ready`);
+};
+
+const cashier = new Cashier();
+const customer1 = new Customer('Jim', 'Fries');
+const customer2 = new Customer('Ken', 'Eggs omlet');
+const customer3 = new Customer('Maggy', 'Salmon');
+const customer4 = new Customer('Enach', 'Cabbage rice');
+
+cashier.addOrder(customer1);
+cashier.addOrder(customer2);
+cashier.addOrder(customer3);
+cashier.addOrder(customer4);
+
+cashier.deliverOrder();
+cashier.deliverOrder();
+
+// DESIGN A PARENTHESIS VALIDATION CHECKER USING A STACK
+
