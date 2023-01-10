@@ -183,3 +183,22 @@ const squareRootOfFloat = (floatNumber) => {
 console.log(squareRootOfFloat(78));
 console.log(squareRootOfFloat(9));
 console.log(squareRootOfFloat(90));
+
+// FIND IF TWO ELEMENTS OF AN ARRAY ADD UP TO A GIVEN NUMBER
+
+const findTwoSum = (array, sum) => {
+  for (let i = 0; i < array.length; i += 1) {
+    for (let k = i + 1; k < array.length; k += 1) {
+      if (array[i] + array[k] === sum) {
+        console.log([array[i], array[k]]);
+        return true;
+      }
+    }
+  }
+  return false;
+};
+
+console.log(marks);
+console.log(findTwoSum(marks, 100));
+console.log(findTwoSum(marks, 90));
+console.log(findTwoSum(marks, 159));
