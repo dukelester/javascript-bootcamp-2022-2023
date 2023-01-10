@@ -218,3 +218,33 @@ const findTwoSumBetter = (array, sum) => {
 console.log(findTwoSumBetter(marks, 100));
 console.log(findTwoSumBetter(marks, 90));
 console.log(findTwoSumBetter(marks, 159));
+
+// FIND AN ELEMENT WITHIN AN ARRAY THAT APPEARS ONLY ONCE
+const findOnlyOnce = (array, low, high) => {
+  if (low > high) {
+    return null;
+  }
+  if (low === high) {
+    return array[low];
+  }
+  const midpoint = Math.floor((low + high) / 2);
+  if (midpoint % 2 === 0) {
+    if (array[midpoint] === array[midpoint + 1]) {
+      return findOnlyOnce(array, midpoint + 1, high);
+    }
+    return findOnlyOnce(array, low, midpoint);
+  }
+  if (array[midpoint] === array[midpoint - 1]) {
+    return findOnlyOnce(array, midpoint + 1, high);
+  }
+  return findOnlyOnce(array, low, midpoint - 1);
+};
+
+function findOnlyOnceHelper(array) {
+  return findOnlyOnce(array, 0, array.length);
+}
+
+const myArr = [1, 1, 3, 3, 4, 5, 5, 7, 7, 8, 8];
+const myArr2 = [1, 1, 3, 3, 4, 4, 5, 5, 7, 7, 8];
+console.log(findOnlyOnceHelper(myArr));
+console.log(findOnlyOnceHelper(myArr2));
