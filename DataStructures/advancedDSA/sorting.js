@@ -268,3 +268,40 @@ const myObj = [{ prop1: 'name', prop2: 'location' },
 
 const objectSort = (objA, objB) => Object.keys(objA).length - Object.keys(objB).length;
 console.log(myObj.sort(objectSort));
+
+// IMPLEMENT A WORD COUNTER LIST
+/**
+ * Create a function that generates an object of words (as keys) and the number of times the
+ * words occur in a string ordered by highest to lowest occurrences.
+ * Here’s some example input: practice makes perfect. get perfect by practice. just practice.
+ * Here’s the example output: { practice: 3, perfect: 2, makes: 1, get: 1, by: 1,just: 1 }.
+ */
+
+const sortWord = (wordA, wordB) => wordA[0] - wordB[0]; // sorting helper
+
+const wordCount = (sentence) => {
+  const wordArray = sentence.replace(/[.]/g, ' ').split(' ');
+  console.log(wordArray);
+  const occurrence = {};
+  const answeList = {};
+  for (let m = 0; m < wordArray.length; m += 1) {
+    const currentWord = wordArray[m];
+    if (!occurrence[currentWord]) {
+      occurrence[currentWord] = 1;
+    } else {
+      occurrence[currentWord] += 1;
+    }
+  }
+  const temporaryArray = [];
+  for (let prop in occurrence) {
+    temporaryArray.push([occurrence[prop], prop]);
+  };
+  temporaryArray.sort(sortWord);
+  for (let i = 0; i < temporaryArray.length; i += 1) {
+    const current = temporaryArray[i];
+    answeList[current[i]] = current[0];
+  }
+  return answeList;
+};
+wordCount('practice makes perfect. get perfect by practice. just practice.');
+console.log(wordCount('practice makes perfect. get perfect by practice. just practice.'));
