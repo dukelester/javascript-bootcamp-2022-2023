@@ -47,3 +47,11 @@ form where the algorithm needs to access only the last-added element. The limita
 of stacks is that they cannot access the non-last-added element directly like arrays can;
 in addition, accessing deeper elements requires you to remove the elements from the
 data structure.
+
+## Queues
+
+A queue is also a data structure, but you can remove only the first added element. This is a principle known as `first in, first out` (`FIFO`). A queue is also great
+because of the constant time in its operations. Similar to a stack, it has limitations
+because only one item can be accessed at a time. Queues should be used over arrays
+when you need to work with data in the `FIFO` form where the algorithm only needs to
+access the first added element.
