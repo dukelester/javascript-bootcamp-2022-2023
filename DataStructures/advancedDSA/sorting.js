@@ -248,3 +248,23 @@ const myArr = [1, 1, 3, 3, 4, 5, 5, 7, 7, 8, 8];
 const myArr2 = [1, 1, 3, 3, 4, 4, 5, 5, 7, 7, 8];
 console.log(findOnlyOnceHelper(myArr));
 console.log(findOnlyOnceHelper(myArr2));
+
+// CREATE A JAVASCRIPT SORT COMPARATOR FUNCTION THAT WOULD SORT STRING BY LENGTH
+
+function sortStringsByLength(a, b) {
+  return a.length - b.length;
+}
+const mythical = ['dragon', 'slayer', 'magic', 'wizard of oz', 'ned stark'];
+console.log(mythical.sort(sortStringsByLength));
+
+// Sort string elements, putting strings with a first, as shown here:
+const sortAFirst = (stringA, stringB) => stringA.indexOf('a') - stringB.indexOf('a');
+console.log(mythical.sort(sortAFirst));
+
+// Sort object elements by the number of properties
+const myObj = [{ prop1: 'name', prop2: 'location' },
+  { prop1: 'fghjk', prop2: 'fghjk', prop3: 'outyuio' },
+  { prop1: 'dfghjkl', prop2: 'ertyuiop' }];
+
+const objectSort = (objA, objB) => Object.keys(objA).length - Object.keys(objB).length;
+console.log(myObj.sort(objectSort));
