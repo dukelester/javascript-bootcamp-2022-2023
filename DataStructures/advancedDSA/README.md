@@ -96,3 +96,25 @@ and least recently used (LRU) caching.
 Cache design generally considers these two factors:
 • Temporal locality: A memory location that has been recently accessed is likely to be accessed again.
 • Spatial locality: A memory location near one that has recently been accessed is likely to be accessed again.
+
+## Trees
+
+A general tree data structure is composed of nodes with children nodes. The first/top
+node is called the root node. We will explore many different types of trees
+such as binary trees, binary search trees, and self-balancing binary search trees. First,
+we will cover what trees are and how they are structured. Then, we will cover
+methods of traversing the tree data structure in detail. Finally, we will learn about
+binary search trees and self-balancing binary search trees to understand how to store
+easily searchable data.
+
+## Binary Trees
+
+A binary tree is a type of tree that has only two children nodes: left and right.
+
+## Tree Traversal
+
+Traversal through an array is simple: you access the tree using the index and increment
+the index until the index reaches the size limit. With trees, the left and right pointers have
+to be followed in order to go through every element in the tree. There are various ways to
+do this, of course; the most popular traversal techniques are `pre-order traversal`, `post-­
+order traversal`, `in-order traversal`, and `level-order traversal`.
