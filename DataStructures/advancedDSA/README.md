@@ -147,3 +147,11 @@ child has now bubbled up and replaced the parent.
 If the node has two children, either find the maximum of the left
 subtree or find the minimum of the right subtree to replace that
 node.
+
+## Searching in the BST
+
+Search can be performed using the property that BST node’s left child is always
+smaller than its parent and that BST node’s right child is always greater than its parent.
+Traversing the tree can be done by checking whether currentRoot is smaller or greater
+than the value to be searched. If currentRoot is smaller, the right child is visited. If
+currentRoot is bigger, the left child is visited.

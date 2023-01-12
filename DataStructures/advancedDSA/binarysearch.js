@@ -79,13 +79,38 @@ function deleteRecursively(root, value) {
 }
 
 BinartSearchTree.prototype.remove = function (value) {
-  deleteRecursively(this.root, value);
+  return deleteRecursively(this.root, value);
 };
 
 // Time Complexity (for balanced tree): O(log2(n))
 // Time Complexity (for unbalanced trees): O(n)
 // Time complexity for deletion is also O(log2(n)) because at most that’s the height that
 // will need to be traversed to find and delete the desired node.
+
+// The search
+
+BinartSearchTree.prototype.search = function (value) {
+  let currentRoot = this.root;
+  let found = false;
+
+  while (currentRoot) {
+    if (currentRoot.value > value) {
+      currentRoot = currentRoot.leftChild;
+    } else if (currentRoot.value < value) {
+      currentRoot = currentRoot.rightChild;
+    } else {
+      found = true;
+      break;
+    }
+  }
+  console.log('found!!!!');
+  return found;
+};
+
+// Time Complexity (for balanced tree): O(log2(n))
+// Time Complexity (for unbalanced trees): O(n)
+// Note that all of the operations’ time complexities are equal to the height of the binary
+// tree search.
 
 const simpleBST = new BinartSearchTree();
 simpleBST.insert(90);
@@ -95,5 +120,6 @@ simpleBST.insert(95);
 const myNode = new TreeNode();
 console.log(myNode);
 console.log(simpleBST);
-const removed = simpleBST.remove(90);
-console.log(removed);
+console.log(simpleBST.root, simpleBST.remove(90));
+console.log(simpleBST.search(90));
+console.log(simpleBST.search(65));
