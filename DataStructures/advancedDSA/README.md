@@ -118,3 +118,9 @@ the index until the index reaches the size limit. With trees, the left and right
 to be followed in order to go through every element in the tree. There are various ways to
 do this, of course; the most popular traversal techniques are `pre-order traversal`, `post-­
 order traversal`, `in-order traversal`, and `level-order traversal`.
+
+## Binary Search Trees
+
+Binary search trees (BSTs) also have two children, left and right. However, in a binary
+search tree, the left child is smaller than the parent, and the right child is bigger than the parent. BSTs have this structure because this property enables for searching, inserting,
+and removing specific values with O(log2(n)) time complexity.
