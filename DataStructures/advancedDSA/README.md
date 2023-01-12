@@ -124,3 +124,26 @@ order traversal`, `in-order traversal`, and `level-order traversal`.
 Binary search trees (BSTs) also have two children, left and right. However, in a binary
 search tree, the left child is smaller than the parent, and the right child is bigger than the parent. BSTs have this structure because this property enables for searching, inserting,
 and removing specific values with O(log2(n)) time complexity.
+
+## Insertion in BST
+
+Inserting into the BST requires a couple of steps. First, if the root is empty, the root
+becomes the new node. Otherwise, a while loop is used to traverse the BST until the
+right condition is met. At each loop iteration, it is checked whether the new node is
+greater or smaller than the currentRoot.
+
+## Deletion
+
+This algorithm works by first traversing down the tree looking specifically for the node
+with the specified value. When the node is found, there are three possible cases:
+
+• Case 1: The node has no children.
+This is the simplest case. If the node has no child, return null.
+That node has been deleted now.
+• Case 2: The node has one child.
+If the node has one child, simply return the existing child. That
+child has now bubbled up and replaced the parent.
+• Case 3: The node has two children.
+If the node has two children, either find the maximum of the left
+subtree or find the minimum of the right subtree to replace that
+node.
