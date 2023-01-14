@@ -155,3 +155,9 @@ smaller than its parent and that BST node’s right child is always greater than
 Traversing the tree can be done by checking whether currentRoot is smaller or greater
 than the value to be searched. If currentRoot is smaller, the right child is visited. If
 currentRoot is bigger, the left child is visited.
+
+## AVL Trees
+
+AVL is a binary search tree that balances itself
+An AVL tree keeps the BST height to a minimum
+and ensures O(log2(n)) time complexities for search, insertion, and deletion.
