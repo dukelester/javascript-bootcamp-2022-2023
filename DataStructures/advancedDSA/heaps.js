@@ -161,3 +161,21 @@ console.log(myMaxHeap);
 const maxRemoved = myMaxHeap.poll();
 console.log('removed from the max heap', maxRemoved);
 console.log(myMaxHeap, myMaxHeap.size());
+
+// FIND THE K TH SMALLEST VALUE IN AN ARRAY
+function getKthSmallestElement(array, k) {
+  const minimumHeap = new MinHeap();
+  for (let i = 0; i < array.length; i += 1) {
+    minimumHeap.add(array[i]);
+  }
+  for (let i = 1; i < k; i += 1) {
+    minimumHeap.poll();
+  }
+  return minimumHeap.poll();
+}
+
+const array1 = [12, 3, 13, 4, 80, 67, 34, 2, 40, 23];
+console.log(getKthSmallestElement(array1, 3));
+console.log(getKthSmallestElement(array1, 5));
+console.log(getKthSmallestElement(array1, 2));
+console.log(getKthSmallestElement(array1, array1.length));
