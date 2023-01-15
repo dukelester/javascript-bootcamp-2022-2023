@@ -169,3 +169,25 @@ There are two types of binary heaps: max-heap and min-heap. In max-heap, the
 root node has the highest value, and each node’s value is greater than its children. In
 min-heap, the root node has the lowest value, and each node’s value is smaller than its
 children.
+
+A heap is a tree-like data structure represented using arrays. To get the parent, left child,
+and right child of a tree’s node, you can use the index formula.
+ Heap Node Index Summary
+
+Node            Index
+(self)          N
+Parent          (N-1) / 2
+Left child      (N*2) + 1
+Right child     (N*2) + 2
+
+Heaps maintain their structure via percolation; when a node is inserted, it “bubbles
+up” by repeatedly swapping with elements until the proper heap structure is achieved.
+For a min-heap, this means the lowest-valued node at the root. For a max-heap, this
+means the highest-valued node at the root. Heaps work fundamentally by percolation,
+which allows deletion and insertion in O(log2(n)) time.
+
+Operation                                   Time Complexity
+
+Deletion (leads to “bubble down”)           O(log2(n))
+Insertion (leads to “bubble up”)            O(log2(n))
+Heap sort                                   O(n log2(n))
