@@ -161,3 +161,11 @@ currentRoot is bigger, the left child is visited.
 AVL is a binary search tree that balances itself
 An AVL tree keeps the BST height to a minimum
 and ensures O(log2(n)) time complexities for search, insertion, and deletion.
+
+## The Heap
+
+A heap is an important data structure that returns the highest or lowest element in O(1) time.
+There are two types of binary heaps: max-heap and min-heap. In max-heap, the
+root node has the highest value, and each node’s value is greater than its children. In
+min-heap, the root node has the lowest value, and each node’s value is smaller than its
+children.
