@@ -174,7 +174,8 @@ A heap is a tree-like data structure represented using arrays. To get the parent
 and right child of a tree’s node, you can use the index formula.
  Heap Node Index Summary
 
-Node            Index
+## Node            Index
+
 (self)          N
 Parent          (N-1) / 2
 Left child      (N*2) + 1
@@ -186,8 +187,52 @@ For a min-heap, this means the lowest-valued node at the root. For a max-heap, t
 means the highest-valued node at the root. Heaps work fundamentally by percolation,
 which allows deletion and insertion in O(log2(n)) time.
 
-Operation                                   Time Complexity
+## Operation                                   Time Complexity
 
 Deletion (leads to “bubble down”)           O(log2(n))
 Insertion (leads to “bubble up”)            O(log2(n))
 Heap sort                                   O(n log2(n))
+
+## The Graphs
+
+Graphs are a versatile way of representing connections between objects.graphs are visual representations of the connections between objects.
+
+### • Vertex
+
+A vertex is the node from which graphs are formed. a node will be noted as `V` for Big-O analysis. A vertex is represented using a circle
+
+### • Edge
+
+An edge is the connection between nodes in a graph. Graphically, it is the “line” between the vertices. It will be noted as `E` for Big-O analysis. An edge is represented using a line.
+
+### • Degree of vertex
+
+The degree of a vertex refers to the number of edges on that vertex (node).
+
+### • Sparse graph
+
+A graph is considered sparse when only a small fraction of possible connections exist between vertices.
+
+### • Dense graph
+
+ A graph is considered dense when there are a lot of connections between different vertices.
+
+### • Cyclical graph
+
+A directed graph is considered cyclical if there is a path that travels from a vertex and back to itself.
+
+### • Weights
+
+Weights are values on the edges. Weights can signify various things depending on the context.
+
+## Undirected Graphs
+
+Undirected graphs are graphs that do not have a direction between edges. The edge
+implies a mutual connection between the two nodes without a direction. A real-life
+example of an undirected graph relationship is friendship. Friendship occurs only if both
+parties mutually acknowledge the relationship. Values of the edges within a friendship
+graph may indicate how close the friendship is.
+Two of the most common ways to do this are by using an adjacency matrix or an
+adjacency list. The adjacency list uses a vertex as the key for nodes with its neighbors
+stored into a list, whereas an adjacency matrix is a V by V matrix with each element
+of the matrix indicating a connection between two vertices.
