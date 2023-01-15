@@ -74,9 +74,34 @@ class MinHeap extends Heap {
       index = this.parentIndex(index);
     }
   }
+
+  // radd a new element (node)
+  add(item) {
+    this.items[this.items.length] = item;
+    this.bubbleUp();
+  }
+
+  // remove an element
+  poll() {
+    const item = this.items[0];
+    this.items[0] = this.items[this.items.length - 1];
+    this.items.pop();
+    this.bubbleDown();
+    return item;
+  }
 }
 
 const myHeap = new Heap();
 console.log(myHeap);
 const myMinHeap = new MinHeap();
+myMinHeap.add(89);
+myMinHeap.add(34);
+myMinHeap.add(45);
+myMinHeap.add(23);
+myMinHeap.add(67);
+myMinHeap.add(80);
+
+console.log(myMinHeap);
+const removed = myMinHeap.poll();
+console.log('removed', removed);
 console.log(myMinHeap, myMinHeap.size());
