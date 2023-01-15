@@ -179,3 +179,20 @@ console.log(getKthSmallestElement(array1, 3));
 console.log(getKthSmallestElement(array1, 5));
 console.log(getKthSmallestElement(array1, 2));
 console.log(getKthSmallestElement(array1, array1.length));
+
+// FIND THE KTH LARGEST VALUE IN AN ARRAY
+
+function getKthBiggestElement(array, k) {
+  const maximumHeap = new MaxHeap();
+  for (let i = 0; i < array.length; i += 1) {
+    maximumHeap.add(array[i]);
+  }
+  for (let m = 0; m < k; m += 1) {
+    maximumHeap.poll();
+  }
+  return maximumHeap.poll();
+}
+console.log('===================from the max heap =========================');
+console.log(getKthBiggestElement(array1, 3));
+console.log(getKthBiggestElement(array1, 5));
+console.log(getKthBiggestElement(array1, 2));
